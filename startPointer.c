@@ -6,5 +6,6 @@ int main()
     ptr = string;
     ptr += 4;
     printf("%s",ptr);
+    //output: are you?
     return 0;
 }
