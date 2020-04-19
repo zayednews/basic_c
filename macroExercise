@@ -1,0 +1,135 @@
+///2
+#include<stdio.h>
+#define max 100
+int main()
+{
+    printf("max is %d", max);
+
+    return 0;
+}
+
+////3
+#include <stdio.h>
+#define INCREMENT(x) ++x
+int main()
+{
+    char *ptr = "GeeksQuiz";
+    int x = 10;
+    printf("%s  ", INCREMENT(ptr));
+    printf("%d", INCREMENT(x));
+    return 0;
+}
+
+///4
+#include <stdio.h>
+#define MULTIPLY(a, b) a*b
+int main()
+{
+    // The macro is expended as 2 + 3 * 3 + 5, not as 5*8
+    printf("%d", MULTIPLY(2+3, 3+5));
+    return 0;
+}
+
+//5
+#include <stdio.h>
+#define merge(a, b) a##b
+int main()
+{
+    printf("%d ", merge(12, 34));
+}
+
+///6
+#include <stdio.h>
+#define get(a) #a
+int main()
+{
+    // GeeksQuiz is changed to "GeeksQuiz"
+    //#define get(a) a
+    //printf("%s", get("GeeksQuiz"));
+    printf("%s", get(GeeksQuiz));
+}
+
+///7
+#include <stdio.h>
+#define PRINT(i, limit) while (i <= limit) \
+                        { \
+                            printf("GeeksQuiz "); \
+                            i++; \
+                        }
+int main()
+{
+    int i = 0;
+    PRINT(i, 3);
+    return 0;
+}
+
+///8
+
+#include <stdio.h>
+#define square(x) x*x
+int main()
+{
+  int x = 36/square(6); // Expended as 36/6*6
+  printf("%d", x);
+  return 0;
+}
+//9
+
+inline int square(int x) { return x*x; }
+int main()
+{
+  int x = 36/square(6);
+  printf("%d", x);
+  return 0;
+}
+
+///
+#include <stdio.h>
+
+int main()
+{
+   printf("Current File :%s\n", __FILE__ );
+   printf("Current Date :%s\n", __DATE__ );
+   printf("Current Time :%s\n", __TIME__ );
+   printf("Line Number :%d\n", __LINE__ );
+   return 0;
+}
+//
+#include <stdio.h>
+
+#define SWAP(a,b)\
+        int temp = a;\
+        a = b;\
+        b = temp;\
+        printf("%d %d",a,b);
+
+
+int main()
+{
+    int x = 10;
+    int y = 20;
+    SWAP(x,y);
+ return 0;
+}
+
+//
+#include <stdio.h>
+
+#define SMALLEST(a,b,c)\
+        int smallest = 0;\
+        if(a<=b && a<=c){ smallest = a;}\
+        else if(b<=a && b<=c) { smallest = b;}\
+        else { smallest = c;}\
+        printf("%d",smallest);
+
+
+int main()
+{
+    int x = 5;
+    int y = 10;
+    int z = 10;
+    SMALLEST(x,y,z);
+ return 0;
+}
+
+
